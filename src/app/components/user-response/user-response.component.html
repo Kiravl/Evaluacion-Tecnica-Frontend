@@ -1,0 +1,16 @@
+<div class="modal-header">
+    <h4 class="modal-title">Usuario guardado</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss(false)">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <p>Nombre: {{data.nombre}}</p>
+    <p>Apellido paterno: {{data.apellidopat}}</p>
+    <p>Apellido materno: {{data.apellidomat}}</p>
+    <p>Email: {{data.email}}</p>
+    <p>Fecha de nacimiento: {{data.fchnac}}</p>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close(false)">Close</button>
+</div>

@@ -16,9 +16,9 @@ export class TableUsersComponent implements OnInit {
   ngOnInit() {
   }
 
-  emitirAccion($event: MouseEvent, tipo: string, id: number) {
+  emitirAccion(ev: MouseEvent, tipo: string, id: number) {
     this.accion.emit({tipo: tipo, id: id});
-    $event.preventDefault();
+    ev.stopPropagation();
   }
 
 }

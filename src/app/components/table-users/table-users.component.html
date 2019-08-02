@@ -13,20 +13,20 @@
                 <img [src]="user.avatar" [alt]="user.first_name" height="25">
             </td>
             <td style="padding: 0">
-                <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+                    <button class="btn btn-outline-primary mr-2" id="dropdownManual" ngbDropdownAnchor (click)="myDrop.open()">
                         Menú
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#" (click)="emitirAccion($event, 'editar', user.id)">
+                    <div ngbDropdownMenu aria-labelledby="dropdownManual">
+                        <button ngbDropdownItem (click)="emitirAccion($event, 'editar', user.id)">
                             <img src="./assets/icons/baseline-edit-24px.svg" alt="Editar"> Editar
-                        </a>
-                        <a class="dropdown-item" href="#" (click)="emitirAccion($event, 'ver', user.id)">
+                        </button>
+                        <button ngbDropdownItem (click)="emitirAccion($event, 'ver', user.id)">
                             <img src="./assets/icons/baseline-search-24px.svg" alt="Ver"> Ver
-                        </a>
-                        <a class="dropdown-item" href="#" (click)="emitirAccion($event, 'eliminar', user.id)">
-                            <img src="./assets/icons/baseline-delete-24px.svg" alt="Ver"> Eliminar
-                        </a>
+                        </button>
+                        <button ngbDropdownItem (click)="emitirAccion($event, 'eliminar', user.id)">
+                            <img src="./assets/icons/baseline-delete-24px.svg" alt="Eliminar"> Eliminar
+                        </button>
                     </div>
                 </div>
             </td>

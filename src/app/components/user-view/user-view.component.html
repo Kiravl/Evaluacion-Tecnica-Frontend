@@ -1,0 +1,16 @@
+<div class="modal-header">
+    <h4 class="modal-title">Usuario</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss(false)">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <p><b>Nombre:</b> {{data.first_name}}</p>
+    <p><b>Apellidos:</b> {{data.last_name}}</p>
+    <div style="width: 100%; display: flex">
+        <img [src]="data.avatar" [alt]="data.first_name" style="margin: 0 auto">
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close(false)">Close</button>
+</div>

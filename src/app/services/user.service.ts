@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Pagina } from '../models/pagina';
 import { Subject, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +26,9 @@ export class UserService {
   }
 
   getUser(id: number) {
-    return this.http.get<Pagina>(`${environment.api}/users/${id}`);
+    return this.http.get<any>(`${environment.api}/users/${id}`)
+      .pipe(map(data => data ? (<User> data.data) : null))
+      .toPromise();
   }
 
   createUser(args: any) {
