@@ -1,0 +1,34 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{titulo}} usuario</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss(false)">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<form [formGroup]="formulario" (ngSubmit)="formulario.valid && send()">
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input class="form-control" id="name" placeholder="Nombre" formControlName="nombre">
+        </div>
+        <div class="form-group">
+            <label for="lastname">Apellido paterno</label>
+            <input class="form-control" id="lastname" placeholder="Apellido paterno" formControlName="apellidopat">
+        </div>
+        <div class="form-group">
+            <label for="lastname1">Apellido materno</label>
+            <input class="form-control" id="lastname1" placeholder="Apellido materno" formControlName="apellidomat">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input class="form-control" id="email" placeholder="Email" formControlName="email" type="email">
+        </div>
+        <div class="form-group">
+            <label for="fchnac">Fecha de nacimiento</label>
+            <input class="form-control" id="fchnac" placeholder="Fecha de nacimiento" formControlName="fchnac" type="date">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+        <button type="submit" class="btn btn-outline-primary">Guardar</button>
+    </div>
+</form>
