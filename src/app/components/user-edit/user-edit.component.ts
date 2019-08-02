@@ -25,10 +25,12 @@ export class UserEditComponent implements OnInit {
   constructor(public activeModal: NgbActiveModal, private fb: FormBuilder, private usrSrv: UserService) { }
 
   ngOnInit() {
-    if (this.id > 0) this.titulo = "Editar";
-    this.usrSrv.getUser(this.id).then(data => {
-      this.formulario.patchValue(data);
-    }).catch(error => console.log(error))
+    if (this.id > 0) {
+      this.titulo = "Editar";
+      this.usrSrv.getUser(this.id).then(data => {
+        this.formulario.patchValue(data);
+      }).catch(error => console.log(error))
+    }
   }
 
   send() {

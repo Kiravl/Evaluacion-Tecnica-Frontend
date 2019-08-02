@@ -34,18 +34,17 @@ export class UsersComponent implements OnInit {
         break;
     }
     modalRef.componentInstance.id = args.id;
-    modalRef.result.then(data => this._procesarResponse(data))
+    modalRef.result.then(data => this._procesarResponse(data)).catch(error => console.log(error));
   }
 
   nuevo() {
     const modalRef = this.modalService.open(UserEditComponent);
     modalRef.componentInstance.id = 0;
-    modalRef.result.then(data => this._procesarResponse(data))
+    modalRef.result.then(data => this._procesarResponse(data)).catch(error => console.log(error));
   }
 
   private _procesarResponse(data) {
     if (!data || data == 'Close click') return;
-    console.log(data)
     const modalRef = this.modalService.open(UserResponseComponent);
     modalRef.componentInstance.data = data;
   }

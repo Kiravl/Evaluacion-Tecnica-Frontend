@@ -15,7 +15,8 @@ export class UserViewComponent implements OnInit {
   constructor(private usrSrv: UserService, public activeModal: NgbActiveModal) { }
 
   ngOnInit() {
-    this.usrSrv.getUser(this.id).then(data => this.data = data);
+    if (this.id)
+      this.usrSrv.getUser(this.id).then(data => this.data = data);
   }
 
 }

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +14,10 @@ import { UserResponseComponent } from './components/user-response/user-response.
 import { UserViewComponent } from './components/user-view/user-view.component';
 import { UserDeleteComponent } from './components/user-delete/user-delete.component';
 import { HeaderComponent } from './components/header/header.component';
+import { registerLocaleData } from '@angular/common';
+import localeEsPe from '@angular/common/locales/es-PE';
+
+registerLocaleData(localeEsPe, 'es');
 
 @NgModule({
   declarations: [
@@ -38,7 +42,8 @@ import { HeaderComponent } from './components/header/header.component';
     NgbModule,
     ReactiveFormsModule
   ], providers: [
-    NgbActiveModal
+    NgbActiveModal,
+    { provide: LOCALE_ID, useValue: 'es-Ar' }
   ], bootstrap: [AppComponent]
 })
 export class AppModule { }
