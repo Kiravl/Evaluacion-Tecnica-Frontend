@@ -1,0 +1,17 @@
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item">
+            <a class="page-link" (click)="goToExtreme($event, false)" href="#">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="page-item" [ngClass]="{active: page == currentPage}" *ngFor="let page of list_pages">
+            <a class="page-link" (click)="goTo($event, page)" href="#">{{page}}</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" (click)="goToExtreme($event, true)" href="#">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>

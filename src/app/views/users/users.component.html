@@ -1,0 +1,5 @@
+<button class="btn btn-success">Nuevo</button>
+
+<app-table-users [users]="pagina.data" (accion)="accion($event)"></app-table-users>
+
+<app-pagination-users [list_pages]="pagina.list_pages" (onPageChange)="onPageChange($event)"></app-pagination-users>
