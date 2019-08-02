@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UserResponseComponent } from './components/user-response/user-response.component';
 import { UserViewComponent } from './components/user-view/user-view.component';
 import { UserDeleteComponent } from './components/user-delete/user-delete.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { UserDeleteComponent } from './components/user-delete/user-delete.compon
     UserEditComponent,
     UserResponseComponent,
     UserViewComponent,
-    UserDeleteComponent
+    UserDeleteComponent,
+    HeaderComponent
   ], entryComponents: [
     UserEditComponent,
     UserResponseComponent,
